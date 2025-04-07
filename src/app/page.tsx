@@ -49,7 +49,7 @@ export default function Home() {
         <div className="flex flex-wrap justify-center gap-4 text-secondary-text">
           <a href="mailto:yuejonathan@gmail.com" className="hover:text-accent">yuejonathan@gmail.com</a>
           <span>|</span>
-          <span>+1 (410) 292-0310</span>
+          {/* <span>+1 (410) 292-0310</span> */}
           <span>|</span>
           <a href="https://linkedin.com/in/jonathanyue97" target="_blank" rel="noopener noreferrer" className="hover:text-accent">
             linkedin.com/in/jonathanyue97
