@@ -45,17 +45,17 @@ export default function Home() {
     <div className="space-y-12">
       {/* Hero Section */}
       <section className="text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-2">Jonathan Yue</h1>
-        <div className="flex flex-wrap justify-center gap-4 text-gray-600">
-          <a href="mailto:yuejonathan@gmail.com" className="hover:text-blue-600">yuejonathan@gmail.com</a>
+        <h1 className="text-4xl font-bold text-foreground mb-2">Jonathan Yue</h1>
+        <div className="flex flex-wrap justify-center gap-4 text-secondary-text">
+          <a href="mailto:yuejonathan@gmail.com" className="hover:text-accent">yuejonathan@gmail.com</a>
           <span>|</span>
           <span>+1 (410) 292-0310</span>
           <span>|</span>
-          <a href="https://linkedin.com/in/jonathanyue97" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+          <a href="https://linkedin.com/in/jonathanyue97" target="_blank" rel="noopener noreferrer" className="hover:text-accent">
             linkedin.com/in/jonathanyue97
           </a>
           <span>|</span>
-          <a href="https://yonyonjue.itch.io" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+          <a href="https://yonyonjue.itch.io" target="_blank" rel="noopener noreferrer" className="hover:text-accent">
             yonyonjue.itch.io
           </a>
         </div>
@@ -63,7 +63,7 @@ export default function Home() {
 
       {/* Experience Section */}
       <section>
-        <h2 className="text-2xl font-semibold text-gray-900 mb-6">Experience</h2>
+        <h2 className="text-2xl font-semibold text-foreground mb-6">Experience</h2>
         <div className="space-y-8">
           <WorkExperience
             title="Full-Stack Engineer (Founding)"
@@ -126,29 +126,37 @@ export default function Home() {
 
       {/* Education Section */}
       <section>
-        <h2 className="text-2xl font-semibold text-gray-900 mb-6">Education</h2>
+        <h2 className="text-2xl font-semibold text-foreground mb-6">Education</h2>
         <div className="space-y-4">
           <div className="border-l-4 border-gray-200 pl-4">
-            <h3 className="font-medium text-gray-900">Tufts University</h3>
-            <p className="text-gray-600">M.S. in Computer Science (Machine Learning) • Boston, MA • 2022-2024</p>
+            <h3 className="font-medium text-foreground">Tufts University</h3>
+            <p className="text-secondary-text">M.S. in Computer Science (Machine Learning) • Boston, MA • 2022-2024</p>
           </div>
           <div className="border-l-4 border-gray-200 pl-4">
-            <h3 className="font-medium text-gray-900">Washington University in St. Louis</h3>
-            <p className="text-gray-600">B.S. in Computer Science • St. Louis, MO • 2015-2019 (CS GPA: 3.62)</p>
+            <h3 className="font-medium text-foreground">Washington University in St. Louis</h3>
+            <p className="text-secondary-text">B.S. in Computer Science • St. Louis, MO • 2015-2019 (CS GPA: 3.62)</p>
           </div>
         </div>
       </section>
 
       {/* Skills Section */}
       <section>
-        <h2 className="text-2xl font-semibold text-gray-900 mb-6">Technical Skills</h2>
-        <Skills skills={skills} />
+        <h2 className="text-2xl font-semibold text-foreground mb-6">Skills</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {skills.map((skill, index) => (
+            <Skills key={index} title={skill.title} description={skill.description} />
+          ))}
+        </div>
       </section>
 
       {/* Interests Section */}
       <section>
-        <h2 className="text-2xl font-semibold text-gray-900 mb-6">Interests</h2>
-        <Interests interests={interests} />
+        <h2 className="text-2xl font-semibold text-foreground mb-6">Interests</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {interests.map((interest, index) => (
+            <Interests key={index} title={interest.title} description={interest.description} />
+          ))}
+        </div>
       </section>
     </div>
   );

@@ -1,23 +1,13 @@
-interface SkillCategory {
+interface SkillsProps {
   title: string;
   description: string;
 }
 
-interface SkillsProps {
-  skills: SkillCategory[];
-}
-
-const Skills = ({ skills }: SkillsProps) => {
+export default function Skills({ title, description }: SkillsProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {skills.map((skill, index) => (
-        <div key={index} className="bg-gray-50 p-4 rounded-lg">
-          <h3 className="font-medium text-gray-900 mb-2">{skill.title}</h3>
-          <p className="text-gray-600">{skill.description}</p>
-        </div>
-      ))}
+    <div className="p-6 bg-card-bg rounded-lg border border-border">
+      <h3 className="text-lg font-semibold text-foreground mb-2">{title}</h3>
+      <p className="text-secondary-text">{description}</p>
     </div>
   );
-};
-
-export default Skills; 
+} 
