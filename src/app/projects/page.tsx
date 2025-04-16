@@ -14,13 +14,13 @@ export default function Projects() {
       title: "Goose Party",
       description: "A real-time multiplayer party game platform that allows friends to play together remotely.",
       tech: ["Next.js", "WebSockets", "React", "TypeScript"],
-      link: "https://gooseparty.com"
+      link: "https://gooseparty.gg"
     },
     {
       title: "World of Materials",
       description: "Educational game that teaches material science concepts through interactive puzzles. Winner of Best Serious Game at German Computer Games Awards 2021.",
       tech: ["Unity", "C#", "3D Modeling"],
-      link: "https://example.com/world-of-materials"
+      link: "https://welt-der-werkstoffe.de/"
     },
     {
       title: "Worms in the Sky",
