@@ -111,16 +111,6 @@ export default function Home() {
               "Created systems including Navigation, Dialogue, and Player interaction with object-oriented design which accelerated puzzle design by 50% by allowing designers to create puzzles without coding."
             ]}
           />
-
-          <WorkExperience
-            title="Developer"
-            company="Worms in the Sky"
-            period="2018"
-            location="Showcase"
-            achievements={[
-              "Created a 3D boss fighter game in Unity over three months, applying self-taught concepts such as state-machines, behavior trees, animation, and rigging."
-            ]}
-          />
         </div>
       </section>
 
