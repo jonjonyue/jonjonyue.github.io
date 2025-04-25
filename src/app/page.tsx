@@ -7,7 +7,7 @@ export default function Home() {
   const skills = [
     {
       title: "Languages",
-      description: "Proficient in C#, React, C++, Python, Lua, Java"
+      description: "React, Next.js, JavaScript, TypeScript, C#, C++, Python, Lua, Java"
     },
     {
       title: "Frameworks & Skills",
@@ -70,11 +70,9 @@ export default function Home() {
             company="Goose Party"
             period="2024 - Present"
             achievements={[
-              "Developed and launched a web-based party game platform built with Next.js, enabling seamless multiplayer experiences.",
-              "Resolved over a dozen critical front-end and back-end issues tracked through GitHub, enhancing gameplay fluidity, UI responsiveness, and user interaction.",
-              "Implemented major UI improvements, including intuitive event animations, visual feedback systems, and streamlined audio settings, significantly boosting user engagement and retention.",
-              "Added essential quality-of-life features such as pause functionality, tooltips for better usability, and clear visual indicators for game states, improving overall user experience metrics.",
-              "Collaborated closely with the product team, iteratively addressing feedback to quickly integrate improvements, resulting in smoother gameplay and increased customer satisfaction."
+              "Developed and launched a web-based party game platform with Next.js, enabling seamless multiplayer experiences and resolving over a dozen critical front-end and back-end issues.",
+              "Implemented major UI improvements including intuitive animations, visual feedback systems, and streamlined audio settings, significantly boosting user engagement and retention.",
+              "Added essential quality-of-life features and collaborated closely with the product team to integrate improvements, resulting in smoother gameplay and increased customer satisfaction."
             ]}
           />
 
