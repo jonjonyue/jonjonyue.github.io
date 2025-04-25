@@ -1,6 +1,7 @@
 import WorkExperience from '@/components/WorkExperience';
 import Skills from '@/components/Skills';
 import Interests from '@/components/Interests';
+import Link from 'next/link';
 
 export default function Home() {
   const skills = [
@@ -42,29 +43,28 @@ export default function Home() {
   ];
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-16">
       {/* Hero Section */}
-      <section className="text-center">
-        <h1 className="text-4xl font-bold text-foreground mb-2">Jonathan Yue</h1>
-        <div className="flex flex-wrap justify-center gap-4 text-secondary-text">
-          <a href="mailto:yuejonathan@gmail.com" className="hover:text-accent">yuejonathan@gmail.com</a>
-          <span>|</span>
-          {/* <span>+1 (410) 292-0310</span> */}
-          <span>|</span>
-          <a href="https://linkedin.com/in/jonathanyue97" target="_blank" rel="noopener noreferrer" className="hover:text-accent">
-            linkedin.com/in/jonathanyue97
-          </a>
-          <span>|</span>
-          <a href="https://yonyonjue.itch.io" target="_blank" rel="noopener noreferrer" className="hover:text-accent">
-            yonyonjue.itch.io
-          </a>
+      <section className="text-center py-8 md:py-16 mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <span className="text-gradient">Jonathan Yue</span>
+        </h1>
+        <p className="text-xl text-secondary-text mb-6 max-w-2xl mx-auto">
+          Full Stack Developer & Game Engineer with expertise in interactive experiences and machine learning
+        </p>
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-secondary-text">
+          <SocialLink href="mailto:yuejonathan@gmail.com" text="yuejonathan@gmail.com" />
+          <span className="hidden md:inline text-border">|</span>
+          <SocialLink href="https://linkedin.com/in/jonathanyue97" text="LinkedIn" />
+          <span className="hidden md:inline text-border">|</span>
+          <SocialLink href="https://yonyonjue.itch.io" text="Portfolio" />
         </div>
       </section>
 
       {/* Experience Section */}
-      <section>
-        <h2 className="text-2xl font-semibold text-foreground mb-6">Experience</h2>
-        <div className="space-y-8">
+      <section className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+        <SectionHeader title="Experience" />
+        <div className="space-y-6">
           <WorkExperience
             title="Full-Stack Engineer (Founding)"
             company="Goose Party"
@@ -115,23 +115,31 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section>
-        <h2 className="text-2xl font-semibold text-foreground mb-6">Education</h2>
-        <div className="space-y-4">
-          <div className="border-l-4 border-gray-200 pl-4">
-            <h3 className="font-medium text-foreground">Tufts University</h3>
-            <p className="text-secondary-text">M.S. in Computer Science (Machine Learning) • Boston, MA • 2022-2024</p>
+      <section className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
+        <SectionHeader title="Education" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="p-6 bg-card-bg/30 hover:bg-card-bg/60 rounded-lg border border-border transition-all duration-300 shadow-sm hover:shadow-card">
+            <h3 className="text-lg font-semibold text-foreground mb-1">Tufts University</h3>
+            <p className="text-accent font-medium mb-2">M.S. in Computer Science</p>
+            <p className="text-secondary-text">Boston, MA • 2022-2024</p>
+            <div className="mt-3 text-sm bg-highlight/20 inline-block px-3 py-1 rounded-full">
+              Machine Learning Specialization
+            </div>
           </div>
-          <div className="border-l-4 border-gray-200 pl-4">
-            <h3 className="font-medium text-foreground">Washington University in St. Louis</h3>
-            <p className="text-secondary-text">B.S. in Computer Science • St. Louis, MO • 2015-2019 (CS GPA: 3.62)</p>
+          <div className="p-6 bg-card-bg/30 hover:bg-card-bg/60 rounded-lg border border-border transition-all duration-300 shadow-sm hover:shadow-card">
+            <h3 className="text-lg font-semibold text-foreground mb-1">Washington University in St. Louis</h3>
+            <p className="text-accent font-medium mb-2">B.S. in Computer Science</p>
+            <p className="text-secondary-text">St. Louis, MO • 2015-2019</p>
+            <div className="mt-3 text-sm bg-highlight/20 inline-block px-3 py-1 rounded-full">
+              CS GPA: 3.62
+            </div>
           </div>
         </div>
       </section>
 
       {/* Skills Section */}
-      <section>
-        <h2 className="text-2xl font-semibold text-foreground mb-6">Skills</h2>
+      <section className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
+        <SectionHeader title="Skills" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {skills.map((skill, index) => (
             <Skills key={index} title={skill.title} description={skill.description} />
@@ -140,8 +148,8 @@ export default function Home() {
       </section>
 
       {/* Interests Section */}
-      <section>
-        <h2 className="text-2xl font-semibold text-foreground mb-6">Interests</h2>
+      <section className="animate-fade-in" style={{ animationDelay: '0.5s' }}>
+        <SectionHeader title="Interests" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {interests.map((interest, index) => (
             <Interests key={index} title={interest.title} description={interest.description} />
@@ -151,3 +159,34 @@ export default function Home() {
     </div>
   );
 }
+
+interface SectionHeaderProps {
+  title: string;
+}
+
+const SectionHeader = ({ title }: SectionHeaderProps) => {
+  return (
+    <div className="mb-6 flex items-center">
+      <h2 className="text-2xl font-semibold text-foreground">{title}</h2>
+      <div className="ml-4 flex-grow h-px bg-border"></div>
+    </div>
+  );
+};
+
+interface SocialLinkProps {
+  href: string;
+  text: string;
+}
+
+const SocialLink = ({ href, text }: SocialLinkProps) => {
+  return (
+    <a 
+      href={href} 
+      target={href.startsWith('mailto') ? undefined : '_blank'} 
+      rel="noopener noreferrer"
+      className="inline-flex items-center space-x-1 text-secondary-text hover:text-accent transition-colors duration-300"
+    >
+      <span>{text}</span>
+    </a>
+  );
+};
