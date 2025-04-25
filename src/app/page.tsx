@@ -57,7 +57,7 @@ export default function Home() {
           <span className="hidden md:inline text-border">|</span>
           <SocialLink href="https://linkedin.com/in/jonathanyue97" text="LinkedIn" />
           <span className="hidden md:inline text-border">|</span>
-          <SocialLink href="https://yonyonjue.itch.io" text="Portfolio" />
+          <SocialLink href="https://yonyonjue.itch.io" text="itch.io" />
         </div>
       </section>
 
@@ -106,7 +106,7 @@ export default function Home() {
             period="2019"
             location="Cologne, Germany"
             achievements={[
-              "Led the development of &quot;World of Materials&quot; (Welt Der Werkstoffe), an experimental educational game, which won the Best Serious Game award at the 2021 German Computer Games Awards.",
+              "Led the development of World of Materials (Welt Der Werkstoffe), an experimental educational game, which won the Best Serious Game award at the 2021 German Computer Games Awards.",
               "Coordinated with a cross-functional team of six to create 10 levels of in-depth puzzles covering material science exam material.",
               "Created systems including Navigation, Dialogue, and Player interaction with object-oriented design which accelerated puzzle design by 50% by allowing designers to create puzzles without coding."
             ]}
